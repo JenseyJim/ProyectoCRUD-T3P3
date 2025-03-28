@@ -1,5 +1,7 @@
 # ProyectoCRUD-T3P3
 Proyecto CRUD - Tarea 3 - Programacion III - ITLA
+Estudiante: Jensey Jimenez
+Matricula: 2023-1800
 
 ## ✅ GitHub Actions
 
