@@ -1,0 +1,23 @@
+name: Detectar cambios en script.js
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  detectar-cambio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Verificar si se modificó script.js
+        run: |
+          git fetch origin main
+          git diff --name-only HEAD^ HEAD | grep "script.js" && echo "✅ Se detectó un cambio en script.js" || echo "ℹ️ No se detectaron cambios en script.js"
