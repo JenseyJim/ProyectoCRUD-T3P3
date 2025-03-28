@@ -1,0 +1,23 @@
+name: Verificación simple del proyecto
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  check-readme:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clonar el repositorio
+      uses: actions/checkout@v3
+
+    - name: Verificar que exista README.md
+      run: |
+        if [ -f README.md ]; then
+          echo "✅ El archivo README.md existe."
+        else
+          echo "❌ No se encontró README.md"
+          exit 1
+        fi
