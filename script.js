@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function handleFormSubmit(e) {
       e.preventDefault()
-  
+
       const newTask = {
         id: Date.now().toString(),
         title: taskTitleInput.value.trim(),
@@ -69,7 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
         resetForm()
       }
     }
-  
+
+
+    // Funcion para editar tarea
     function editTask(taskId) {
       const task = tasks.find((task) => task.id === taskId)
   
