@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     taskForm.addEventListener("submit", handleFormSubmit)
     updateBtn.addEventListener("click", handleUpdateTask)
     cancelBtn.addEventListener("click", resetForm)
+
+    // Sistema de filtrado de tareas por prioridad (alta, media, baja)
     filterOptions.forEach((option) => {
       option.addEventListener("click", function (e) {
         e.preventDefault()
